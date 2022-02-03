@@ -14,7 +14,7 @@ docker build -t <imagename> .
 2. Kick off container a development container 
 
 ```sh
-docker run -it -p 3000:3000 -v ${PWD}/:/app <imagename>
+docker run -it -p 3000:3000 -v ${PWD}/:/app --env-file .env <imagename>
 ```
 
 
