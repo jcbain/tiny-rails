@@ -20,8 +20,22 @@ class UrlsController < ApplicationController
     redirect_to '/urls'
   end
 
+  def update
+    @url = Url.find_by(id: params[:id])
+    @url.update(long_url: params[:url][:long_url])
+    redirect_to '/urls/' + @url.id.to_s
+  else
+    
+  end
+
   def show
     @url = Url.find_by(id: params[:id])
+  end
+
+  def destroy
+    Url.destroy(params[:id])
+
+    redirect_to '/urls'
   end
 
   def create_short_url(length)
@@ -34,5 +48,8 @@ class UrlsController < ApplicationController
     else
       'http://' + url
     end
+  end
+
+  def belongs_to_user?
   end
 end

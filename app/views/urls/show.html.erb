@@ -1,1 +1,8 @@
 <h1>Individual url</h1>
+<p><%= link_to @url.short_url, "/u/" + @url.short_url.to_s %></p>
+<%= form_for @url do |f|%>
+  <%= f.label :long_url%><br>
+  <%= f.text_field :long_url, value: @url.long_url %><br>
+  <%= f.submit %>
+<%end%>
+<%= button_to 'Delete', '/urls/' + @url.id.to_s, method: :delete, data: { confirm: "Are you sure?"} %>
