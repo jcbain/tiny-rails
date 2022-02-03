@@ -1,0 +1,17 @@
+<h1>Hello new urls<h1>
+<table>
+  <thead>
+    <tr>
+      <th>short url</th>
+      <th>long url</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @urls.each do |url| %>
+    <tr>
+      <td><%= link_to url.short_url, "/urls/" + url.id.to_s %></td>
+      <td><%= url.long_url %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
