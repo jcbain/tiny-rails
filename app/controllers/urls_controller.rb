@@ -1,6 +1,6 @@
 class UrlsController < ApplicationController
 
-  before_action :authorized
+  # before_action :authorized
 
   def index
     user_id = session[:user_id]
@@ -33,7 +33,8 @@ class UrlsController < ApplicationController
   end
 
   def destroy
-    Url.destroy(params[:id])
+    @url = Url.find(params[:id])
+    @url.destroy
 
     redirect_to '/urls'
   end
@@ -50,6 +51,5 @@ class UrlsController < ApplicationController
     end
   end
 
-  def belongs_to_user?
-  end
+
 end

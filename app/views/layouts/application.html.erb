@@ -1,14 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>App</title>
+  <title>tiny app</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="folder">
+    <%= image_tag "folder.png" %>
+    <p>dog pics</p>
+  </div>
 
-<%= yield %>
+  <main class="app-container">
+    <header class="top-header">
+      <div class="top-bar">
+        <section class="fake-buttons">
+          <p class="x-button"></p>
+          <p class="x-button"></p>
+          <p class="x-button selected"></p>
+        </section>
+        <section class="title">
+          <p>tiny app</p>
+        </section>
+        <section class="filler"></section>
+      </div>
+    <div>
+    <% if logged_in? %>
+      <nav>
+        <%= link_to 'urls', '/urls' %>
+        <%= button_to 'logout', '/logout', method: :delete  %>
+      </nav>
+      <div>
+        <p><%= current_user.username %></p>
+        <%= image_tag "person.png", class: "avatar" %>
+      </div>
+    <% else %>
+      <nav>
+        <%= button_to 'login', '/login', method: :get  %>
+      </nav>
+    <% end %>
+    </div>
+   </header>
+    <%= yield %>
+  </main>
 
 </body>
 </html>
