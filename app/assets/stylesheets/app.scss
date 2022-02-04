@@ -10,8 +10,8 @@ html {
 body {
   background-color: #ffbc03;
   display: flex;
-  padding-left: 5vw;
-  padding-top: 5vh;
+  // padding-left: 5vw;
+  // padding-top: 5vh;
 }
 
 .folder {
@@ -25,6 +25,9 @@ body {
 }
 
 main.app-container {
+  position: absolute;
+  left: 50px;
+  top: 40px;
   border: 3px solid black;
   border-radius: 10px;
   background-color: #f1e9dc;
@@ -43,32 +46,6 @@ main > .content-container {
   }
 }
 
-.table {
-  background-color: #fbf4e9;
-  border: 2px solid #ece3d3;
-  border-radius: 5px;
-  & .table-row {
-    display: flex;
-    &.table-header {
-      background-color: #ece3d3;
-    }
-    & .table-data {
-      padding: 5px 5px;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      &.short-url {
-        flex: 1 0 0;
-      }
-      &.long-url {
-        flex: 2 0 0;
-      }
-      &.table-title {
-        font-size: .8rem;
-        font-weight: bold;
-      }
-    }
-  }
-}
+
 
 

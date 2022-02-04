@@ -1,0 +1,27 @@
+.table {
+  background-color: #fbf4e9;
+  border: 2px solid #ece3d3;
+  border-radius: 5px;
+  & .table-row {
+    display: flex;
+    &.table-header {
+      background-color: #ece3d3;
+    }
+    & .table-data {
+      padding: 5px 5px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      &.short-url {
+        flex: 1 0 0;
+      }
+      &.long-url {
+        flex: 2 0 0;
+      }
+      &.table-title {
+        font-size: .8rem;
+        font-weight: bold;
+      }
+    }
+  }
+}
