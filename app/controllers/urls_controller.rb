@@ -8,6 +8,8 @@ class UrlsController < ApplicationController
   end
 
   def new
+    user_id = session[:user_id]
+    @urls = Url.where(user_id: user_id).take(10) 
     @url = Url.new
   end
 
@@ -29,6 +31,8 @@ class UrlsController < ApplicationController
   end
 
   def show
+    user_id = session[:user_id]
+    @urls = Url.where(user_id: user_id).take(10) 
     @url = Url.find_by(id: params[:id])
   end
 

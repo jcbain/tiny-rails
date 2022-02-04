@@ -1,6 +1,11 @@
-<h1>Create a new url</h1>
+<div>
+  <%= render "table" %>
+</div>
+<div>
+<h3>save a new url</h3>
 <%= form_for @url do |f|%>
-  <%= f.label :long_url%><br>
-  <%= f.text_field :long_url%><br>
-  <%= f.submit %>
+  <%= f.label :long_url, "long url", class: "form-label" %><br>
+  <%= f.text_field :long_url, class: "form-input", placeholder: "long url here" %><br>
+  <%= f.submit "save url", class: "form-button" %>
 <%end%>
+</div>

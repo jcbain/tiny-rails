@@ -1,0 +1,30 @@
+<header class="top-header">
+      <div class="top-bar">
+        <section class="fake-buttons">
+          <p class="x-button"></p>
+          <p class="x-button"></p>
+          <p class="x-button selected"></p>
+        </section>
+        <section class="title">
+          <p>tiny app</p>
+        </section>
+        <section class="filler"></section>
+      </div>
+    <div class="nav-section">
+    <% if logged_in? %>
+      <nav>
+        <%= button_to 'urls', '/urls', method: :get, class: "nav-link" %>
+        <%= button_to 'new', '/urls/new', method: :get, class: "nav-link" %>
+        <%= button_to 'logout', '/logout', method: :delete, class: "nav-link" %>
+      </nav>
+      <div>
+        <p><%= current_user.username %></p>
+        <%= image_tag "person.png", class: "avatar" %>
+      </div>
+    <% else %>
+      <nav>
+        <%= button_to 'login', '/login', method: :get, class: "nav-link"  %>
+      </nav>
+    <% end %>
+  </div>
+</header>

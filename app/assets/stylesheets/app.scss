@@ -1,5 +1,5 @@
 @import "base/reset";
-@import "patternsgit remote set-url origin/header";
+@import "patterns/header";
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
 
 html {
@@ -30,6 +30,45 @@ main.app-container {
   background-color: #f1e9dc;
   width: 80vw;
   height: 80vh;
+}
+
+main > .content-container {
+  display: flex;
+  & > div {
+    height: 100%;
+    flex: 1 1 0;
+    padding: 20px 15px;
+    overflow-x: hidden;
+    // text-overflow: ellipsis;
+  }
+}
+
+.table {
+  background-color: #fbf4e9;
+  border: 2px solid #ece3d3;
+  border-radius: 5px;
+  & .table-row {
+    display: flex;
+    &.table-header {
+      background-color: #ece3d3;
+    }
+    & .table-data {
+      padding: 5px 5px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      &.short-url {
+        flex: 1 0 0;
+      }
+      &.long-url {
+        flex: 2 0 0;
+      }
+      &.table-title {
+        font-size: .8rem;
+        font-weight: bold;
+      }
+    }
+  }
 }
 
 

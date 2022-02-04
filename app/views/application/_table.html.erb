@@ -1,0 +1,12 @@
+  <section class="table">
+    <div class="table-header table-row">
+      <p class="table-data table-title short-url">short url</p>
+      <p class="table-data table-title long-url">long url</p>
+    </div>
+    <% @urls.each do |url| %>
+      <div class="table-row">
+        <p class="table-data short-url"><%= link_to url.short_url, "/urls/" + url.id.to_s %></p>
+        <p class="table-data long-url"><%= url.long_url %></p>
+      </div>
+    <% end %>
+  </section>

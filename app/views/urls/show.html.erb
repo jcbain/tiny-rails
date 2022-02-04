@@ -1,8 +1,15 @@
-<h1>Individual url</h1>
+
+
+<div>
+  <%= render "table" %>
+</div>
+<div>
+<h3>Individual url</h3>
 <p><%= link_to @url.short_url, "/u/" + @url.short_url.to_s %></p>
 <%= form_for @url do |f|%>
-  <%= f.label :long_url%><br>
-  <%= f.text_field :long_url, value: @url.long_url %><br>
-  <%= f.submit %>
+  <%= f.label :long_url, "long url", class: "form-label" %><br>
+  <%= f.text_field :long_url, value: @url.long_url, class: "form-input" %><br>
+  <%= f.submit "update url", class: "form-button" %>
 <%end%>
-<%= button_to 'Delete', '/urls/' + @url.id.to_s, method: :delete, data: { confirm: "Are you sure?"} %>
+<%= button_to 'delete', '/urls/' + @url.id.to_s ,method: :delete, data: { confirm: "Are you sure?"}, class: "form-button" %>
+</div>
